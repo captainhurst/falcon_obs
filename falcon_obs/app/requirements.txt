@@ -1,0 +1,6 @@
+Cython==0.22
+falcon==0.2
+gunicorn==19.3.0
+python-mimeparse==0.1.4
+simplejson==3.6.5
+six==1.9.0
