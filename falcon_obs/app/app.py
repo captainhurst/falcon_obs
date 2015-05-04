@@ -53,15 +53,15 @@ number to the requestor.
 def _roundup(x):
 	return int(math.ceil(x / 10.0) * 10)
 
-# Taken from here: http://stackoverflow.com/questions/21079439/implementation-of-luhn-formula
+# Taken from here: http://stackoverflow.com/questions/21079439/implementation-of-luhn-formula -- slightly adapted
 def _luhn_checksum(card_number):
     
     def digits_of(n):
         return [int(d) for d in str(n)]
     
     digits = digits_of(card_number)
-    odd_digits = digits[-1::-2]
-    even_digits = digits[-2::-2]
+    odd_digits = digits[::2]
+    even_digits = digits[1::2]
     checksum = 0
     checksum += sum(odd_digits)
     for d in even_digits:
